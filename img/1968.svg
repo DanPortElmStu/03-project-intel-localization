@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260" role="img" aria-label="Intel Founded">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="400" height="260" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    
+<rect width="400" height="260" fill="#eef3f8"/>
+<rect x="0" y="140" width="400" height="120" fill="#d7dfeb"/>
+<rect x="0" y="0" width="400" height="80" fill="#8bb4ff" opacity="0.35"/>
+<rect x="36" y="74" width="328" height="142" rx="18" fill="#f9fbff"/>
+<rect x="60" y="96" width="110" height="96" rx="10" fill="#dfe7f5"/>
+<rect x="182" y="98" width="158" height="14" rx="7" fill="#1d3a7a" opacity="0.9"/>
+<rect x="182" y="122" width="126" height="10" rx="5" fill="#8aa5f2"/>
+<rect x="182" y="142" width="104" height="10" rx="5" fill="#c6d5ff"/>
+<rect x="182" y="166" width="78" height="10" rx="5" fill="#9ab7ff"/>
+<rect x="96" y="164" width="36" height="6" rx="3" fill="#6a88d1"/>
+<rect x="76" y="174" width="76" height="8" rx="4" fill="#a7b8e3"/>
+<rect x="90" y="108" width="18" height="18" rx="4" fill="#0b5bff" opacity="0.85"/>
+<rect x="116" y="108" width="25" height="4" rx="2" fill="#7c95e8"/>
+<rect x="116" y="116" width="18" height="4" rx="2" fill="#c4d4ff"/>
+<circle cx="320" cy="58" r="14" fill="#0b5bff" opacity="0.12"/>
+<circle cx="342" cy="58" r="7" fill="#0b5bff" opacity="0.25"/>
+
+  </g>
+  <rect x="18" y="18" width="90" height="28" rx="14" fill="#ffffff" opacity="0.92"/>
+  <text x="63" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0b1020">1968</text>
+  <text x="36" y="236" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0b1020">Intel Founded</text>
+</svg>

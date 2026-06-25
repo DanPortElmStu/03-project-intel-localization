@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260" role="img" aria-label="Peak GHG Emissions">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="400" height="260" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    
+<rect width="400" height="260" fill="#f8f1e7"/>
+<rect x="0" y="0" width="400" height="82" fill="#f7b985" opacity="0.25"/>
+<rect x="24" y="46" width="352" height="176" rx="18" fill="#fff9f1"/>
+<rect x="48" y="70" width="304" height="110" rx="14" fill="#f4e5d4"/>
+<path d="M72 168c24-40 54-60 94-60 40 0 70 18 94 58" stroke="#f28a3d" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.86"/>
+<circle cx="114" cy="92" r="18" fill="#f5a65b"/>
+<rect x="220" y="84" width="110" height="18" rx="9" fill="#7c3d0d" opacity="0.9"/>
+<rect x="220" y="112" width="74" height="10" rx="5" fill="#f6a65a"/>
+<rect x="220" y="132" width="90" height="10" rx="5" fill="#f3d0a3"/>
+<path d="M58 196h284" stroke="#f3b175" stroke-width="6" stroke-linecap="round" opacity="0.48"/>
+
+  </g>
+  <rect x="18" y="18" width="90" height="28" rx="14" fill="#ffffff" opacity="0.92"/>
+  <text x="63" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0b1020">2006</text>
+  <text x="36" y="236" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0b1020">Peak GHG Emissions</text>
+</svg>

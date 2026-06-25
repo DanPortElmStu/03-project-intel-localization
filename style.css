@@ -1,0 +1,209 @@
+:root {
+  --intel-blue: #0071c5;
+  --intel-dark: #0b1020;
+  --intel-slate: #111a33;
+  --intel-surface: #f4f7fb;
+  --intel-text: #0f172a;
+  --intel-muted: #5b647d;
+  --intel-white: #ffffff;
+  --shadow: 0 12px 30px rgba(2, 12, 27, 0.12);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(0, 113, 197, 0.08), transparent 20%),
+    var(--intel-surface);
+  color: var(--intel-text);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hero {
+  background:
+    linear-gradient(90deg, rgba(3, 14, 39, 0.94), rgba(0, 113, 197, 0.78)),
+    url('img/intel-header-logo.svg') center/cover no-repeat;
+  color: var(--intel-white);
+  padding: 80px 24px;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 140px;
+  margin: 0 auto 18px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.timeline-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+.timeline-header {
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: var(--intel-blue);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.timeline-header h2 {
+  font-size: 1.8rem;
+}
+
+.timeline-row {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.milestone-card {
+  flex: 0 0 300px;
+  background: var(--intel-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(2, 12, 27, 0.18);
+}
+
+.year-pill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(11, 16, 32, 0.82);
+  color: var(--intel-white);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--intel-dark);
+}
+
+.card-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Specific styles targeting the GhgToRE2 image file */
+img[src*="GhgToRE2"] {
+  /* give it a subtle highlight without rounded corners */
+  display: block;
+  box-shadow: 0 8px 20px rgba(0, 113, 197, 0.12);
+  transition: transform 0.25s ease, filter 0.25s ease;
+  filter: saturate(0.95) contrast(1.02);
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  background: linear-gradient(transparent, rgba(3, 14, 39, 0.95));
+  color: var(--intel-white);
+  padding: 28px 16px 16px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.milestone-card:hover .image-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-text {
+  padding: 18px 16px 20px;
+}
+
+.card-text h3 {
+  margin-bottom: 8px;
+  color: var(--intel-dark);
+}
+
+.card-text p {
+  color: var(--intel-muted);
+  font-size: 0.95rem;
+}
+
+.scroll-hint {
+  text-align: center;
+  padding: 18px 16px 40px;
+  color: var(--intel-muted);
+}
+
+@media (max-width: 900px) {
+  .timeline-row {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  .milestone-card {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .timeline-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 64px 18px;
+  }
+
+  .timeline-section {
+    padding: 36px 12px 12px;
+  }
+
+  .card-image img {
+    height: 200px;
+  }
+}

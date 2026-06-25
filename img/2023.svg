@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260" role="img" aria-label="Renewable Electricity">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="400" height="260" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    
+<rect width="400" height="260" fill="#eef8fc"/>
+<rect x="0" y="0" width="400" height="82" fill="#bceafb" opacity="0.3"/>
+<rect x="34" y="46" width="332" height="176" rx="18" fill="#f7fbff"/>
+<path d="M68 192h264" stroke="#0b90c4" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M104 192l38-58 30 36 40-50 32 42 36-32" stroke="#18a6ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.88"/>
+<rect x="88" y="74" width="44" height="48" rx="8" fill="#0c5d84" opacity="0.95"/>
+<rect x="228" y="64" width="44" height="58" rx="8" fill="#7ed9ff" opacity="0.95"/>
+<circle cx="302" cy="92" r="18" fill="#a9e8ff" opacity="0.82"/>
+<rect x="224" y="136" width="112" height="14" rx="7" fill="#0a3f58" opacity="0.9"/>
+
+  </g>
+  <rect x="18" y="18" width="90" height="28" rx="14" fill="#ffffff" opacity="0.92"/>
+  <text x="63" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0b1020">2023</text>
+  <text x="36" y="236" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0b1020">Renewable Electricity</text>
+</svg>
