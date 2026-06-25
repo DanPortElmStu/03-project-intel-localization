@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // List of RTL (right-to-left) language codes
+    const RTL_LANGUAGES = ['ar', 'he', 'fa', 'ur', 'ps', 'sd', 'ug', 'yi', 'ji', 'iw', 'ku'];
+
+    // Function to check if a language is RTL
+    function isRTLLanguage(lang) {
+      if (!lang) return false;
+      // Extract the language code (e.g., 'ar' from 'ar-SA')
+      const langCode = lang.split('-')[0].toLowerCase();
+      return RTL_LANGUAGES.includes(langCode);
+    }
+
+    // Function to update RTL mode based on current language
+    function updateRTLMode() {
+      const htmlElement = document.documentElement;
+      const currentLang = htmlElement.getAttribute('lang') || 'en';
+      
+      if (isRTLLanguage(currentLang)) {
+        htmlElement.setAttribute('dir', 'rtl');
+      } else {
+        htmlElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    // Initial check when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      updateRTLMode();
+
+      // Watch for language changes (Google Translate and manual language changes)
+      const htmlElement = document.documentElement;
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+            updateRTLMode();
+          }
+        });
+      });
+
+      // Observe the html element for attribute changes
+      observer.observe(htmlElement, { attributes: true });
+
+      // Also listen for Google Translate's specific events
+      window.addEventListener('google.translate.onTranslateElementLoad', () => {
+        setTimeout(updateRTLMode, 100);
+      });
+
+      // Listen for changes to the Google Translate cookie
+      const checkTranslateInterval = setInterval(() => {
+        if (document.documentElement.getAttribute('lang') && 
+            document.documentElement.getAttribute('lang') !== 'en') {
+          clearInterval(checkTranslateInterval);
+          updateRTLMode();
+        }
+      }, 500);
+
+      // Clear the interval after 10 seconds to avoid continuous checking
+      setTimeout(() => clearInterval(checkTranslateInterval), 10000);
+    });
+
+    // If DOM is already loaded, run the check immediately
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateRTLMode);
+    } else {
+      updateRTLMode();
+    }
+  </script>
 </head>
 <body>
   <header class="hero">
@@ -192,8 +259,113 @@
         </article>
       </div>
     </section>
+
+    <section class="container my-5 info-container">
+      <div class="row justify-content-center g-4 info-row">
+        <div class="col-12 col-sm-6 col-lg-4 info-col">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100 info-card">
+            <h3 class="h5">
+              <!-- Leaf icon for Sustainability Goals -->
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C12 2 8 6 8 10C8 13.3 10 16 12 16C14 16 16 13.3 16 10C16 6 12 2 12 2Z" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 16V22" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Sustainability Goals
+            </h3>
+            <p class="mb-0">
+              Learn how Intel is reducing emissions, conserving water, and
+              improving waste management across global operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 info-col">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100 info-card">
+            <h3 class="h5">
+              <!-- Lightbulb icon for Innovation Highlights -->
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18H15" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 21H14" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M12 3C8 3 5 6.5 5 10.5C5 13 6.5 15 8 16H16C17.5 15 19 13 19 10.5C19 6.5 16 3 12 3Z" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Innovation Highlights
+            </h3>
+            <p class="mb-0">
+              Discover the technologies and programs that power Intel’s
+              progress toward a more responsible and inclusive future.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 info-col">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100 info-card">
+            <h3 class="h5">
+              <!-- Network/handshake icon for Community Impact -->
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="2.5" stroke="#0071c5" stroke-width="1.5"/>
+                <circle cx="18" cy="6" r="2.5" stroke="#0071c5" stroke-width="1.5"/>
+                <circle cx="12" cy="16" r="2.5" stroke="#0071c5" stroke-width="1.5"/>
+                <path d="M8 8L10 14" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 8L14 14" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6 8L12 14" stroke="#0071c5" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Community Impact
+            </h3>
+            <p class="mb-0">
+              See how Intel partners with communities, suppliers, and customers
+              to make sustainability outcomes more meaningful.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <p class="scroll-hint">Scroll to view timeline | Hover over images to learn more!</p>
+  
+  <script>
+  document.querySelectorAll('.info-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+    });
+  });
+</script>
 </body>
+
+<footer class="intel-footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Email: contact@example.com</li>
+        <li>Phone: (555) 123‑4567</li>
+        <li>Address: 123 Placeholder St.</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>About</h4>
+      <p>
+        This is a placeholder footer built with your Intel‑style design system.
+        Replace this text with your own description or mission statement.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Your Website Name. All rights reserved.</p>
+  </div>
+</footer>
+
 </html>

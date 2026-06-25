@@ -107,6 +107,89 @@ img {
   box-shadow: 0 18px 36px rgba(2, 12, 27, 0.18);
 }
 
+.info-card {
+  background: var(--intel-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(2, 12, 27, 0.16);
+}
+
+.info-card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--intel-dark);
+}
+
+.info-card p {
+  color: var(--intel-muted);
+  font-size: 0.95rem;
+}
+
+.info-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.info-col {
+  display: flex;
+  flex: 0 0 calc(33.333% - 16px);
+  max-width: calc(33.333% - 16px);
+  min-width: 260px;
+}
+
+.info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  background: var(--intel-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 1.25rem;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(2, 12, 27, 0.16);
+}
+
+.info-card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--intel-dark);
+  display: flex;
+  align-items: center;
+}
+
+.info-card p {
+  color: var(--intel-muted);
+  font-size: 0.95rem;
+}
+
+.card-icon {
+  /* Custom icon styling for info cards */
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
 .year-pill {
   position: absolute;
   top: 12px;
@@ -195,15 +278,151 @@ img[src*="GhgToRE2"] {
 }
 
 @media (max-width: 600px) {
-  .hero {
-    padding: 64px 18px;
+
+  /* Turn timeline into a carousel */
+  .timeline-row {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .timeline-section {
-    padding: 36px 12px 12px;
+  .milestone-card {
+    flex: 0 0 85%; 
+    scroll-snap-align: center;
+    width: 85%;
+    margin-right: 8px;
   }
 
-  .card-image img {
-    height: 200px;
+  
+  .timeline-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .timeline-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .info-card {
+    padding: 1.25rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .info-card h3 {
+    position: relative;
+    padding-right: 24px;
+  }
+
+  .info-card h3::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.4rem;
+    color: var(--intel-blue);
+    transition: transform 0.3s ease;
+  }
+
+  .info-card p {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .info-card.active p {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .info-card.active h3::after {
+    content: "–";
+  }
+}
+
+.intel-footer {
+  background: #2a4f8a;
+  color: var(--intel-white);
+  padding: 48px 24px 24px;
+  margin-top: 48px;
+  box-shadow: 0 -8px 20px rgba(2, 12, 27, 0.12);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 260px;
+  min-width: 240px;
+}
+
+.footer-col h4 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--intel-white);
+  letter-spacing: 0.02em;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  color: var(--intel-white);
+  font-size: 0.95rem;
+}
+
+.footer-col a {
+  color: var(--intel-white);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-col a:hover {
+  color: var(--intel-blue);
+}
+
+.footer-col p {
+  color: var(--intel-white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--intel-muted);
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  color: var(--intel-white);
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    margin-top: 24px;
+    padding: 32px 18px 18px;
+  }
+
+  .footer-container {
+    gap: 28px;
   }
 }
